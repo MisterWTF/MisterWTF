@@ -12,11 +12,37 @@
           <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
         </svg>
       </a>
-
+      <script>
+        $(document).ready(function() {
+          $(".animsition").animsition({
+          
+            inClass               :   'flip-in-x-fr',
+            outClass              :   'flip-out-x-fr',
+            inDuration            :    600,
+            outDuration           :    300,
+            linkElement           :   '.animsition-link',
+            // e.g. linkElement   :   'a:not([target="_blank"]):not([href^=#])'
+            loading               :    true,
+            loadingParentElement  :   'body', //animsition wrapper element
+            loadingClass          :   'animsition-loading',
+            unSupportCss          : [ 'animation-duration',
+                                      '-webkit-animation-duration',
+                                      '-o-animation-duration'
+                                    ],
+            //"unSupportCss" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+            //The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+            
+            overlay               :   false,
+            
+            overlayClass          :   'animsition-overlay-slide',
+            overlayParentElement  :   'body'
+          });
+        });
+      </script>
       <div class="trigger">
         {% for page in site.pages %}
           {% if page.title %}
-          <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+          <a class="page-link animsition-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
           {% endif %}
         {% endfor %}
       </div>
