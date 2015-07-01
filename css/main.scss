@@ -47,14 +47,106 @@ $on-laptop:        800px;
   -webkit-transition: opacity 0.15s ease-out;
   transition: opacity 0.15s ease-out;
 }
+
+
+// Import partials from `sass_dir` (defaults to `_sass`)
+@import
+        "base",
+        "layout",
+        "syntax-highlighting"
+;
+.typed-cursor{
+    opacity: 1;
+    -webkit-animation: blink 0.7s infinite;
+    -moz-animation: blink 0.7s infinite;
+    animation: blink 0.7s infinite;
+}
+@keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-webkit-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
+@-moz-keyframes blink{
+    0% { opacity:1; }
+    50% { opacity:0; }
+    100% { opacity:1; }
+}
 /* Not Found */
+@-moz-keyframes move-in {
+  0% {
+    -moz-transform: translateY(40px);
+    transform: translateY(40px);
+  }
+  100% {
+    -moz-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+@-webkit-keyframes move-in {
+  0% {
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+  }
+  100% {
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+@keyframes move-in {
+  0% {
+    -moz-transform: translateY(40px);
+    -ms-transform: translateY(40px);
+    -webkit-transform: translateY(40px);
+    transform: translateY(40px);
+  }
+  100% {
+    -moz-transform: translateY(0px);
+    -ms-transform: translateY(0px);
+    -webkit-transform: translateY(0px);
+    transform: translateY(0px);
+  }
+}
+@-moz-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@-webkit-keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 #not-found{
 	display: table;
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  height: 100%;
+ 	margin: 0;
+  	padding: 0;
+  	width: 100%;
+ 	height: 100%;
 	body{
+		display: table;
+ 		margin: 0;
+  		padding: 0;
+  		width: 100%;
+ 		height: 100%;
 		background-color: #1d2b2a;
 		background-image: url(http://allison.house/assets/img/404-stripe.png), url(http://allison.house/assets/img/404-noise.png);
 		background-repeat: repeat-x, repeat;
@@ -70,11 +162,12 @@ $on-laptop:        800px;
 		-moz-animation: blink 0.1s steps(2, start) infinite, skip 7s linear infinite, flicker 0.1s steps(2, start) infinite;
 		-webkit-animation: blink 0.1s steps(2, start) infinite, skip 7s linear infinite, flicker 0.1s steps(2, start) infinite;
 		animation: blink 0.1s steps(2, start) infinite, skip 7s linear infinite, flicker 0.1s steps(2, start) infinite;
- 		display: table;
-		  margin: 0;
-		  padding: 0;
-		  width: 100%;
-		  height: 100%;
+		.page-content{
+			display: table-cell;
+			vertical-align: bottom;
+			max-width: 800px;
+			margin: 0 auto;
+		}
 		#story{
 			padding: 10px;
 			max-width: 100%;
@@ -83,20 +176,20 @@ $on-laptop:        800px;
 			line-height: 1.25em;
 			&:after{
 				visibility: visible;
-				  content: '';
-				  background-color: #d4f8e3;
-				  display: inline-block;
-				  position: relative;
-				  width: 0.5em;
-				  height: 1em;
-				  top: 5px;
-				  margin-left: 0;
-				  -moz-box-shadow: -2px 0 0px rgba(0, 0, 225, 0.4), -1px 0 3px rgba(103, 171, 236, 0.6), 1px 0 4px rgba(69, 112, 204, 0.5);
-				  -webkit-box-shadow: -2px 0 0px rgba(0, 0, 225, 0.4), -1px 0 3px rgba(103, 171, 236, 0.6), 1px 0 4px rgba(69, 112, 204, 0.5);
-				  box-shadow: -2px 0 0px rgba(0, 0, 225, 0.4), -1px 0 3px rgba(103, 171, 236, 0.6), 1px 0 4px rgba(69, 112, 204, 0.5);
-				  -moz-animation: flicker 0.1s steps(2, start) infinite, ready 1s steps(2, start) 25s infinite;
-				  -webkit-animation: flicker 0.1s steps(2, start) infinite, ready 1s steps(2, start) 25s infinite;
-				  animation: flicker 0.1s steps(2, start) infinite, ready 1s steps(2, start) 25s infinite;
+				content: '';
+				background-color: #d4f8e3;
+				display: inline-block;
+				position: relative;
+				width: 0.5em;
+				height: 1em;
+				top: 5px;
+				margin-left: 0;
+				-moz-box-shadow: -2px 0 0px rgba(0, 0, 225, 0.4), -1px 0 3px rgba(103, 171, 236, 0.6), 1px 0 4px rgba(69, 112, 204, 0.5);
+				-webkit-box-shadow: -2px 0 0px rgba(0, 0, 225, 0.4), -1px 0 3px rgba(103, 171, 236, 0.6), 1px 0 4px rgba(69, 112, 204, 0.5);
+				box-shadow: -2px 0 0px rgba(0, 0, 225, 0.4), -1px 0 3px rgba(103, 171, 236, 0.6), 1px 0 4px rgba(69, 112, 204, 0.5);
+				-moz-animation: flicker 0.1s steps(2, start) infinite, ready 1s steps(2, start) 25s infinite;
+				-webkit-animation: flicker 0.1s steps(2, start) infinite, ready 1s steps(2, start) 25s infinite;
+				animation: flicker 0.1s steps(2, start) infinite, ready 1s steps(2, start) 25s infinite;
 			}
 		}
 		#kick{
@@ -111,13 +204,11 @@ $on-laptop:        800px;
   				color: #1d2b2a;
 			}
 		}
+		.typed-cursor {
+			display: none;
+		}
 	}
-	.page-content{
-		display: table-cell;
-  vertical-align: bottom;
-  max-width: 800px;
-  margin: 0 auto;
-	}
+	
 }
 @-moz-keyframes blink {
   to {
@@ -184,32 +275,4 @@ $on-laptop:        800px;
   #not-found body {
     font-size: 18px;
   }
-}
-
-// Import partials from `sass_dir` (defaults to `_sass`)
-@import
-        "base",
-        "layout",
-        "syntax-highlighting"
-;
-.typed-cursor{
-    opacity: 1;
-    -webkit-animation: blink 0.7s infinite;
-    -moz-animation: blink 0.7s infinite;
-    animation: blink 0.7s infinite;
-}
-@keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-webkit-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
-}
-@-moz-keyframes blink{
-    0% { opacity:1; }
-    50% { opacity:0; }
-    100% { opacity:1; }
 }
