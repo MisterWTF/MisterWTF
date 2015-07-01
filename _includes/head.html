@@ -12,5 +12,9 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
   <script src="{{ site.baseurl }}/js/jquery.animsition.min.js"></script>
   <link rel="stylesheet" href="{{ site.baseurl }}/css/animsition.min.css">
-
+  <!-- some other meta -->
+    {% if page.url == "/404.html" %}
+        <meta http-equiv="refresh" content="5; url=/">
+    {% endif %}
+    <!-- some other stuff like link or script -->
 </head>
