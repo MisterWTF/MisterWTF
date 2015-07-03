@@ -204,6 +204,15 @@ $on-laptop:        800px;
   				color: #1d2b2a;
 			}
 		}
+		#tear{
+			background: url('assets/paper.jpg');
+			position: absolute;
+			top: 20px;
+			left: 120px;
+			width: 400px;
+			height: 400px;
+			border-radius: 30px;
+		}
 		.typed-cursor {
 			display: none;
 		}
